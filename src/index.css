@@ -1,0 +1,77 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* component classes used by the quiz component */
+@layer components {
+  .quiz-box {
+  @apply bg-gray-800 p-6 rounded-2xl shadow-md w-full max-w-md mx-auto relative;
+  }
+
+  .quiz-input {
+    @apply w-full px-3 py-2 rounded-lg bg-gray-700 text-white placeholder-gray-400 text-center focus:outline-none;
+  }
+
+  .btn-primary {
+  @apply px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-500 transition text-white;
+  }
+
+  .btn-secondary {
+  @apply px-3 py-1 bg-gray-700 rounded-lg hover:bg-gray-600 transition text-white;
+  }
+
+  .btn-warning {
+    @apply px-4 py-2 bg-yellow-500 rounded-lg hover:bg-yellow-400 transition text-white;
+  }
+
+  .flag-img {
+    @apply w-36 h-24 object-cover mx-auto rounded shadow-sm;
+  }
+
+  .select-box {
+  @apply bg-gray-700 text-white rounded px-3 py-2;
+  }
+
+  .counter {
+    @apply px-3 py-2 text-sm text-gray-400 self-center;
+  }
+
+  .feedback-area {
+    /* reserve height to avoid layout shift when revealing text */
+    min-height: 3rem; /* keeps space reserved even when empty */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shake {
+    animation: shake 0.32s;
+  }
+}
+
+/* shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+/* global app-level dark layout helpers */
+@layer utilities {
+  .app-center {
+    @apply min-h-screen bg-gray-900 text-white flex items-center justify-center p-6;
+  }
+
+  .quiz-card {
+    @apply bg-gray-800 p-6 rounded-2xl shadow-md w-full max-w-md;
+  }
+
+  /* buttons used in header fallback */
+  .mode-btn {
+    @apply px-4 py-2 rounded bg-gray-700 text-white hover:bg-gray-600;
+  }
+}
