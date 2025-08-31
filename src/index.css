@@ -22,7 +22,8 @@
   }
 
   .btn-warning {
-    @apply px-4 py-2 bg-yellow-500 rounded-lg hover:bg-yellow-400 transition text-white;
+  /* improved for dark backgrounds: darker text on a lighter yellow for contrast */
+  @apply px-4 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-300 transition ring-0 focus:ring-2 focus:ring-yellow-300/40;
   }
 
   .flag-img {

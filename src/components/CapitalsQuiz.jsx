@@ -224,7 +224,6 @@ export default function CapitalsQuiz({ onBack }) {
         <p className="text-gray-300 mb-4">Score: <span className="font-semibold">{score}</span> / {pool.length}</p>
         <div className="flex gap-2">
           <button onClick={handleRestart} className="btn-primary">Restart</button>
-          <button onClick={onBack} className="btn-secondary">⬅ Back</button>
         </div>
       </div>
     );
@@ -263,16 +262,10 @@ export default function CapitalsQuiz({ onBack }) {
 
       {/* Main card (no forced centering added here; parent controls page layout) */}
       <div className="quiz-card bg-gray-800 p-6 rounded-2xl shadow-md w-full max-w-md">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold">Capitals Mode</h2>
-          <div className="flex gap-2">
-            <button onClick={handleRestart} className="btn-secondary text-sm">Shuffle</button>
-            <button onClick={onBack} className="btn-secondary text-sm">⬅ Back</button>
-          </div>
-        </div>
 
-        {/* region selector + counter */}
-        <div className="flex gap-2 items-center mb-4">
+        {/* shuffle + region selector + counter (single row) */}
+        <div className="flex gap-2 items-center justify-evenly mb-4">
+          <button onClick={handleRestart} className="btn-secondary text-sm px-3 py-2 inline-flex items-center justify-center">Shuffle</button>
           <select
             value={region}
             onChange={(e) => setRegion(e.target.value)}
@@ -282,7 +275,7 @@ export default function CapitalsQuiz({ onBack }) {
               <option key={r} value={r}>{r}</option>
             ))}
           </select>
-          <div className="text-sm text-gray-400 ml-2">{index + 1}/{pool.length}</div>
+          <div className="text-sm text-gray-400">{index + 1}/{pool.length}</div>
         </div>
 
         {/* Flag */}
