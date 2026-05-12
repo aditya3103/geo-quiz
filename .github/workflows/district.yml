@@ -3,6 +3,7 @@ name: District Ticket Cron
 on:
   schedule:
     - cron: '*/10 * * * *'
+      timezone: 'Asia/Kolkata'
   workflow_dispatch: # Allows you to run it manually for testing
 
 jobs:
